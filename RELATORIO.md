@@ -6,7 +6,7 @@
 
 ## 0. Resumo
 
-Este trabalho implementou o núcleo do SimES: os escalonadores SSTF e SCAN, o custo de CPU por polling e por interrupção, a resolução de caminhos e as operações básicas do sistema de arquivos. Foram executados os experimentos oficiais X1 a X5 e gerados os CSVs e gráficos correspondentes. Os principais resultados foram: SSTF e SCAN reduziram drasticamente o deslocamento em cargas sequenciais e rajadas; o polling ocupou a CPU quase integralmente nas E/S do disco, enquanto a interrupção reduziu o uso em cerca de dois pontos percentuais ou menos no dispositivo rápido; e o custo de `open` cresceu aproximadamente uma unidade de acesso de diretório por nível de profundidade.
+Este trabalho implementou o núcleo do SimES: os escalonadores SSTF e SCAN, o custo de CPU por polling e por interrupção, a resolução de caminhos e as operações básicas do sistema de arquivos. Foram executados os experimentos oficiais X1 a X5 e gerados os CSVs e gráficos correspondentes. Os principais resultados foram: SSTF e SCAN reduziram drasticamente o deslocamento em cargas sequenciais e rajadas; o polling ocupou a CPU quase integralmente no HDD, enquanto ambos os modos apresentaram uso baixo no dispositivo rápido; e o custo de `open` cresceu aproximadamente uma unidade de acesso de diretório por nível de profundidade.
 
 ## 1. Escopo realizado
 
@@ -162,4 +162,4 @@ O modelo não considera contenção de CPU externa, caches de memória do sistem
 
 | Ferramenta | Finalidade | Onde foi usada (arquivos ou seções) |
 |---|---|---|
-| GitHub Copilot, usando Copilot SDK no VS Code | Implementar o núcleo N2/N3, executar testes e experimentos e redigir o relatório | `simes/es/escalonadores.py`, `simes/es/cpu.py`, `simes/arquivos/sistema.py`, `RELATORIO.md` |
+| GitHub Copilot, usando Copilot SDK no VS Code | Auxiliar na redação do relatório e na execução e organização dos testes | `RELATORIO.md` e registro dos testes de núcleo |
